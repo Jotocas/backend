@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
+import com.example.demo.util.QueryResult;
 import com.example.demo.util.RestResponse;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -46,6 +48,25 @@ public class UserController {
 			isValid=false;
 		}
 		return isValid;
+	}
+	
+	@RequestMapping(value="/getUsers", method=RequestMethod.GET)
+	public List<User> getUsers(){
+		
+		return this.userService.findAll();
+		 
+	}
+	@RequestMapping(value="/deleteUser", method=RequestMethod.POST)
+	public void deleteUser(@RequestBody String userJson) throws Exception{
+		this.mapper= new ObjectMapper();
+		User user=this.mapper.readValue(userJson,User.class);
+		
+		if(user.getId()==null){
+			throw new Exception("El id esta nulo");
+		}
+		
+		this.userService.deleteUser(user.getId());
+		
 	}
 
 }
