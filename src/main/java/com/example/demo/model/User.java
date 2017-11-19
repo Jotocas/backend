@@ -12,42 +12,41 @@ import javax.persistence.Table;
 public class User extends ParentEntity{
 	
 	@Column(name="first_name", nullable=false, length=255)
-	private String first_name;
+	private String firstName;
 	@Column(name="second_name", nullable=true, length=255)
-	private String second_name;
+	private String secondName;
 	@Column(name="first_surname", nullable=false, length=255)
-	private String first_surname;
+	private String firstSurname;
 	@Column(name="second_surname", nullable=true, length=255)
-	private String second_surname;
+	private String secondSurname;
 	@Column(name="phone", nullable=true, length=255)
 	private String phone;
 	@Column(name="adress", nullable=true, length=255)
 	private String adress;
 	
-	
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getSecond_name() {
-		return second_name;
+	public String getSecondName() {
+		return secondName;
 	}
-	public void setSecond_name(String second_name) {
-		this.second_name = second_name;
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
 	}
-	public String getFirst_surname() {
-		return first_surname;
+	public String getFirstSurname() {
+		return firstSurname;
 	}
-	public void setFirst_surname(String first_surname) {
-		this.first_surname = first_surname;
+	public void setFirstSurname(String firstSurname) {
+		this.firstSurname = firstSurname;
 	}
-	public String getSecond_surname() {
-		return second_surname;
+	public String getSecondSurname() {
+		return secondSurname;
 	}
-	public void setSecond_surname(String second_surname) {
-		this.second_surname = second_surname;
+	public void setSecondSurname(String secondSurname) {
+		this.secondSurname = secondSurname;
 	}
 	public String getPhone() {
 		return phone;
@@ -61,6 +60,7 @@ public class User extends ParentEntity{
 	public void setAdress(String adress) {
 		this.adress = adress;
 	}
+	
 	
 	
 	

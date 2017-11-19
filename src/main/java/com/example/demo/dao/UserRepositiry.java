@@ -1,5 +1,10 @@
 package com.example.demo.dao;
 
-public interface UserRepositiry {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.example.demo.model.User;
+
+public interface UserRepositiry extends JpaRepository<User, Long> {
+	@SuppressWarnings("unchecked")
+	User save(User user);
 }
